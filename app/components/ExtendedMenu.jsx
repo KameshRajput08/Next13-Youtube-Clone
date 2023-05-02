@@ -37,7 +37,7 @@ const items = [
   { title: "Live", href: "/", icon: MdLiveTv },
 ];
 
-const ExtendedMenu = () => {
+const ExtendedMenu = ({ id }) => {
   const menuModel = useMenuModal();
   const router = useRouter();
   const { data: session } = useSession();
@@ -65,7 +65,7 @@ const ExtendedMenu = () => {
             <Icon IconType={AiOutlineHome} size={20} /> Home
           </div>
         </Link>
-        <Link href={"/trends"}>
+        <Link href={"?videos=trending"}>
           <div
             className={`flex items-center gap-5 cursor-pointer px-5 py-[10px] w-full text-[12px] rounded-md hover:bg-${theme}-BgSoft`}
           >
@@ -73,7 +73,7 @@ const ExtendedMenu = () => {
             Explore
           </div>
         </Link>
-        <Link href={"/suscriptions"}>
+        <Link href={"?videos=suscriptions"}>
           <div
             className={`flex items-center gap-5 cursor-pointer px-5 py-[10px] w-full text-[12px] rounded-md hover:bg-${theme}-BgSoft`}
           >
@@ -100,7 +100,7 @@ const ExtendedMenu = () => {
           <>
             <div className="px-[18px] flex flex-col gap-4">
               Sign in href like videos, comment, and subscribe.
-              <Link href="SignIn" style={{ textDecoration: "none" }}>
+              <Link href="SignIn">
                 <button className="px-3 py-[5px] bg-transparent border border-blue-500 text-blue-500 rounded-sm font-medium cursor-pointer flex items-center gap-1">
                   <VscAccount size={20} />
                   SIGN IN
@@ -125,30 +125,23 @@ const ExtendedMenu = () => {
         <Hr />
         <div
           className={`flex items-center gap-5 cursor-pointer px-5 py-[10px] w-full text-[12px] rounded-md hover:bg-${theme}-BgSoft`}
-          onClick={() => router.push(`/profile/${user?._id}`)}
+          onClick={() => router.push(`/profile/${id}`)}
         >
           <Icon IconType={MdSettings} size={20} />
           Settings
         </div>
         <div
           className={`flex items-center gap-5 cursor-pointer px-5 py-[10px] w-full text-[12px] rounded-md hover:bg-${theme}-BgSoft`}
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
           {theme !== "light" ? (
             <>
-              <Icon
-                IconType={MdLightMode}
-                size={22}
-                onClick={() => setTheme("system")}
-              />
+              <Icon IconType={MdLightMode} size={22} />
               <span>Light Mode</span>
             </>
           ) : (
             <>
-              <Icon
-                IconType={MdOutlineDarkMode}
-                size={22}
-                onClick={() => setTheme("dark")}
-              />
+              <Icon IconType={MdOutlineDarkMode} size={22} />
               <span>Dark Mode</span>
             </>
           )}

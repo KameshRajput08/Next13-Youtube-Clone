@@ -27,7 +27,7 @@ export default async function RootLayout({ children }) {
       <body className={Sans.className}>
         <div className={`w-screen h-screen relative overflow-hidden`}>
           <ClientOnly>
-            <ExtendedMenu />
+            <ExtendedMenu id={user?._id ? user._id : null} />
             <Navbar profile={user?.image ? user.image : null} />
             <Login />
             <Register />

@@ -64,7 +64,7 @@ const Channel = ({ user, currentUser, videos }) => {
             src={user?.image ? user.image : "/img/placeholder.jpg"}
             width={200}
             height={200}
-            className={` w-32 h-32 rounded-full`}
+            className={` w-32 h-32 rounded-full object-cover`}
             alt="Profile Image"
           />
           <div

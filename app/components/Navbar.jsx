@@ -88,8 +88,8 @@ const Navbar = ({ profile }) => {
             <Link href={`/profile/${session?.user?._id}`}>
               <Avatar
                 src={profile ? profile : "/img/placeholder.jpg"}
-                width={30}
-                height={30}
+                width={36}
+                height={36}
               />
             </Link>
           </>

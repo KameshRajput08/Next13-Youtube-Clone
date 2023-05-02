@@ -44,7 +44,7 @@ const Login = () => {
       if (callback?.ok) {
         toast.success("Logged in");
         onClose();
-        router.reload();
+        router.refresh();
       }
 
       if (callback?.error) {

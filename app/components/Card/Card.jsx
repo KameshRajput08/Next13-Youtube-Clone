@@ -27,7 +27,7 @@ const Card = ({ video }) => {
           <Image
             width={300}
             height={150}
-            className="w-full h-[160px] rounded-lg object-cover"
+            className="w-full h-[180px] sm:h-[160px] rounded-lg object-cover"
             src={video?.thumbnail}
             alt="thumbnail"
           />
