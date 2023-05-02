@@ -21,14 +21,14 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const { image } = await getCurrentUser();
+  const user = await getCurrentUser();
   return (
     <html lang="en">
       <body className={Sans.className}>
         <div className={`w-screen h-screen relative overflow-hidden`}>
           <ClientOnly>
             <ExtendedMenu />
-            <Navbar profile={image} />
+            <Navbar profile={user?.image ? user.image : null} />
             <Login />
             <Register />
             <Upload />
