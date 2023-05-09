@@ -1,3 +1,4 @@
+import LoadingCard from "@/app/components/LoadingCard";
 import React from "react";
 
 const loading = () => {

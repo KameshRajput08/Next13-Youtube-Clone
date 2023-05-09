@@ -55,7 +55,6 @@ const Navbar = ({ profile }) => {
         >
           <Icon IconType={BsSearch} size={16} />
         </div>
-        {/* <FaMicrophone size={28} className="px-2" /> */}
       </div>
       <div className="flex items-center gap-3">
         {theme !== "light" ? (
@@ -89,6 +88,7 @@ const Navbar = ({ profile }) => {
                 width={36}
                 height={36}
                 className="w-9 h-9 object-cover rounded-full"
+                alt="profile image"
               />
             </Link>
           </>

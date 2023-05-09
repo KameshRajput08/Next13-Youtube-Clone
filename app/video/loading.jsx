@@ -21,8 +21,8 @@ const loading = () => {
         </div>
       </div>
       <div className="w-full sm:w-[40%] md:w-[30%] flex flex-col gap-2">
-        {["", "", "", "", "", "", ""].map((e) => (
-          <div className="flex items-start gap-2">
+        {["", "", "", "", "", "", ""].map((e, index) => (
+          <div key={index} className="flex items-start gap-2">
             <div
               className={`animate-pulse space-x-4 h-20 flex-[1.2] bg-gray-400 mb-4 rounded-lg`}
             ></div>
