@@ -34,9 +34,9 @@ const Comment = ({ currentUser, id }) => {
   return (
     <div className={`flex items-center gap-2 px-2 sm:px-0`}>
       <Image
+        className=" w-10 h-10 rounded-full object-cover cursor-pointer"
         width={40}
         height={40}
-        className=" rounded-full"
         src={currentUser?.image ? currentUser.image : "/img/placeholder.jpg"}
         alt="profile picture"
       />

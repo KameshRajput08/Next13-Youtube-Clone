@@ -22,17 +22,18 @@ const VideoPage = async ({ params }) => {
 
   const currentUser = await getCurrentUser();
   return (
-    <ClientOnly>
-      <div className={`flex flex-col md:flex-row gap-6 p-0 sm:px-7 sm:py-5`}>
-        <div className={`flex-[4]`}>
+    <div className={`flex flex-col md:flex-row gap-6 p-0 sm:px-7 sm:py-5`}>
+      <div className={`flex-[4]`}>
+        <ClientOnly page="video">
           <Video video={video} channel={user} currentUser={currentUser} />
-          <Suspense fallback={<></>}> 
+
+          <Suspense fallback={<></>}>
             <Comments id={params.id} currentUser={currentUser} />
           </Suspense>
-        </div>
-        <Recommendations rec={recommendations} />
+        </ClientOnly>
       </div>
-    </ClientOnly>
+      <Recommendations rec={recommendations} />
+    </div>
   );
 };
 

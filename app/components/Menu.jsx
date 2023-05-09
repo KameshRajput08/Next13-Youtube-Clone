@@ -17,7 +17,7 @@ const Menu = () => {
 
   return (
     <div
-      className={`hidden sm:inline-block flex-[0.4] bg-${theme}-bg text-${theme}-bg text-${theme}-text h-screen text-sm sticky top-0 left-0 z-999`}
+      className={`hidden sm:flex flex-[0.4] bg-${theme}-bg text-${theme}-bg text-${theme}-text h-screen text-sm sticky top-0 left-0 z-999`}
     >
       <div>
         <Link href="/">

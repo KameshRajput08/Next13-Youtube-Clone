@@ -3,10 +3,9 @@
 import { signOut, useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
-import { FaMicrophone } from "react-icons/fa";
 import {
   MdLightMode,
   MdOutlineDarkMode,
@@ -15,7 +14,6 @@ import {
 } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import Icon from "./Icon";
-import Avatar from "./Avatar";
 import useLoginModal from "./hooks/useLoginModal";
 import useUploadModal from "./hooks/useUploadModel";
 import useMenuModal from "./hooks/useMenuModel";
@@ -44,7 +42,7 @@ const Navbar = ({ profile }) => {
         <Image src="/img/logo.png" width={35} height={15} alt="logo" />
       </div>
       <div
-        className={`h-full min-w-[300px] md:min-w-[500px] hidden sm:flex items-center border-[1px] bg-${theme}-bg border-${theme}-border rounded-2xl`}
+        className={`h-full min-w-[250px] md:min-w-[450px] hidden sm:flex items-center border-[1px] bg-${theme}-bg border-${theme}-border rounded-2xl`}
       >
         <input
           ref={searchRef}
@@ -86,10 +84,11 @@ const Navbar = ({ profile }) => {
               onClick={() => signOut()}
             />
             <Link href={`/profile/${session?.user?._id}`}>
-              <Avatar
+              <Image
                 src={profile ? profile : "/img/placeholder.jpg"}
                 width={36}
                 height={36}
+                className="w-9 h-9 object-cover rounded-full"
               />
             </Link>
           </>

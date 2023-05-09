@@ -70,16 +70,16 @@ const Channel = ({ user, currentUser, videos }) => {
           <div
             className={`flex flex-col items-center md:items-start mb-5 md:mb-0`}
           >
-            <h1 className={`text-[30px] font-[600]`}>{user.username}</h1>
+            <h1 className={`text-[30px] font-[600]`}>{user?.username}</h1>
             <h1 className={`text-[18px] font-[500] text-${theme}-textSoft`}>
-              {user.desc}
+              {user?.desc}
             </h1>
             <h6 className={`text-sm text-${theme}-textSoft`}>
               <span className="text-lg">{suscribers}&nbsp;</span>Suscribers
             </h6>
           </div>
         </div>
-        {user._id === session?.user?._id ? (
+        {user?._id === session?.user?._id ? (
           <div className={`flex items-center gap-3 whitespace-nowrap`}>
             <Button
               text="Customize Channel"

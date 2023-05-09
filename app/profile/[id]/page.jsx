@@ -10,7 +10,7 @@ const page = async ({ params }) => {
   const videos = await getVideos({ type: "user", id: params.id });
   return (
     <div className={`flex flex-col pl-0 md:pl-5 pt-2`}>
-      <ClientOnly>
+      <ClientOnly page="profile">
         <Channel user={user} currentUser={currentUser} videos={videos} />
       </ClientOnly>
     </div>

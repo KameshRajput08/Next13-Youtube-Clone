@@ -1,26 +1,15 @@
 import React from "react";
-import Icon from "./Icon";
 import Image from "next/image";
-import { BsSearch } from "react-icons/bs";
-import { AiOutlineHome, AiOutlineMenu } from "react-icons/ai";
-import {
-  MdOutlineExplore,
-  MdOutlineHistory,
-  MdOutlineSubscriptions,
-  MdOutlineVideoLibrary,
-} from "react-icons/md";
-import { VscAccount } from "react-icons/vsc";
-import LoadingCard from "./LoadingCard";
-import Link from "next/link";
+import LoadingCard from "./components/LoadingCard";
 
-const LoadingScreen = ({ page }) => {
+const loading = () => {
   return (
     <div className={`w-screen h-screen relative overflow-hidden`}>
       <div
         className={`h-12 flex items-center justify-between px-4 sm:px-6 py-[6px]`}
       >
         <div className="flex items-center gap-6">
-          <Icon IconType={AiOutlineMenu} size={20} />
+          <div className="w-6 h-6 rounded-full"></div>
           <Image src="/img/logo.png" width={35} height={15} alt="logo" />
         </div>
         <div
@@ -33,18 +22,18 @@ const LoadingScreen = ({ page }) => {
           <div
             className={`h-full w-[70px] flex items-center justify-center rr`}
           >
-            <Icon IconType={BsSearch} size={16} />
+            <div className="w-6 h-6 rounded-full"></div>
           </div>
         </div>
         <button
           className={`px-3 py-[5px] bg-transparent border border-blue-500 text-blue-500 rounded-sm font-medium cursor-pointer flex items-center gap-1`}
         >
-          <VscAccount size={20} />
+          <div className="w-6 h-6 rounded-full"></div>
           SIGN IN
         </button>
       </div>
       <div className={`w-screen flex h-[calc(100vh-48px)] overflow-hidden`}>
-        <div
+        {/* <div
           className={`hidden sm:inline-block flex-[0.4] h-screen text-sm sticky top-0 left-0 z-999`}
         >
           <div>
@@ -85,7 +74,7 @@ const LoadingScreen = ({ page }) => {
               History
             </div>
           </div>
-        </div>
+        </div> */}
         <div className={`flex-[7] overflow-y-scroll`}>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 p-0 sm:py-10 sm:px-6">
             {["", "", "", "", "", "", "", ""].map((card, index) => (
@@ -98,4 +87,4 @@ const LoadingScreen = ({ page }) => {
   );
 };
 
-export default LoadingScreen;
+export default loading;

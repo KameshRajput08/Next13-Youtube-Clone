@@ -70,7 +70,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "/api/auth/sigin",
+    signIn: "/",
   },
   debug: process.env.NODE_ENV === "development",
 };

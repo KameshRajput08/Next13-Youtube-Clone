@@ -18,7 +18,7 @@ export async function POST(request) {
   // check duplicate users
   const checkexisting = await User.findOne({ email });
   if (checkexisting)
-    return NextResponse.status(403).json({ error: "User Already Exists...!" });
+    return NextResponse.json({ error: "User Already Exists...!" });
 
   // hash password
   const user = await User.create({

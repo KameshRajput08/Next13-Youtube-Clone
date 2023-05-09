@@ -127,7 +127,7 @@ const Video = ({ video, channel, currentUser }) => {
               width={45}
               height={45}
               src={channel?.image ? channel.image : "/img/placeholder.jpg"}
-              className="rounded-full cursor-pointer"
+              className=" w-11 h-11 rounded-full object-cover cursor-pointer"
               alt=""
             />
           </Link>

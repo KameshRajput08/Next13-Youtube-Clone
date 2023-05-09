@@ -8,7 +8,6 @@ import Input from "../Inputs/Input";
 import Button from "../Inputs/Button";
 import useRegisterModal from "../hooks/useRegisterModal";
 import { useRouter } from "next/navigation";
-import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 
@@ -38,17 +37,14 @@ const Login = () => {
       ...loginData,
       redirect: false,
     }).then((callback) => {
-      console.log(callback);
       setIsLoading(false);
 
       if (callback?.ok) {
-        toast.success("Logged in");
         onClose();
         router.refresh();
       }
 
       if (callback?.error) {
-        toast.error(callback.error);
       }
     });
   }

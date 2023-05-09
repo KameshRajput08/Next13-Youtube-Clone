@@ -8,7 +8,6 @@ import Input from "../Inputs/Input";
 import Button from "../Inputs/Button";
 import useRegisterModal from "../hooks/useRegisterModal";
 import axios from "axios";
-import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -37,15 +36,13 @@ const Register = () => {
     setLoading(true);
 
     axios
-      .post("/api/auth/signup", formData)
+      .post("/api/register", formData)
       .then(() => {
         onClose();
-        toast.success("Registered!");
-        router.reload();
+        loginModal.onOpen();
       })
       .catch((error) => {
         console.log(error);
-        toast.error("Something went wrong...");
       })
       .finally(() => {
         setLoading(false);
